@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Message xsi:noNamespaceSchemaLocation="ComOneDeviceConfigurationSchemaV2.2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ARTSCommonHeader MessageType="Request"/>
+	<LabelFormatTransaction ActionCode="Write">
+		<Label PrintHeadWidth="200" PixelsPer_mm="8" Version="1.0">
+			<ID>1</ID>
+			<Name>二维码标签格式</Name>
+			<StockType>DieCut</StockType>
+			<Size>
+				<Width>336</Width>
+				<Height>305</Height>
+			</Size>
+			<Frame Enable="Yes" Left="0" Top="0" Width="336" Height="305" Rotation="0" AutoHeight="true">
+				<TextField Enable="Yes" Left="5" Top="109" Width="264" Height="32" Rotation="0" FieldName="eng=PLU DESCRIPTION,chi=商品描述">
+					<Text>$D(ItemDescription)</Text>
+					<Font>Arial</Font>
+					<FontSize>12</FontSize>
+					<Alignment>center</Alignment>
+				</TextField>
+				<BarcodeField Enable="Yes" Left="8" Top="165" Width="99" Height="96" Rotation="0" >
+					<BarcodeID>5</BarcodeID>
+					<Alignment>left</Alignment>
+					<TextPosition>Below</TextPosition>
+					<Symbology>ITF14</Symbology>
+				</BarcodeField>
+				<TextField Enable="Yes" Left="109" Top="154" Width="90" Height="29" Rotation="0" FieldName="eng=Static text,chi=单价">
+					<Text>单价</Text>
+					<Font>Arial</Font>
+					<FontSize>9</FontSize>
+					<Alignment>left</Alignment>
+				</TextField>
+				<TextField Enable="Yes" Left="110" Top="242" Width="61" Height="26" Rotation="0" FieldName="eng=Static text,chi=总价">
+					<Text>总价</Text>
+					<Font>Arial</Font>
+					<FontSize>9</FontSize>
+					<Alignment>left</Alignment>
+				</TextField>
+				<TextField Enable="Yes" Left="106" Top="181" Width="96" Height="29" Rotation="0" FieldName="eng=Static text,chi=重量/数量">
+					<Text>重量/数量</Text>
+					<Font>Arial</Font>
+					<FontSize>9</FontSize>
+					<Alignment>left</Alignment>
+				</TextField>
+				<TextField Enable="Yes" Left="202" Top="152" Width="83" Height="26" Rotation="0" FieldName="eng=UNIT PRICE(/kg),chi=单价(/kg)">
+					<Text>$D(TransactionUnitPrice)</Text>
+					<Font>Arial</Font>
+					<FontSize>9</FontSize>
+					<Alignment>left</Alignment>
+				</TextField>
+				<TextField Enable="Yes" Left="198" Top="179" Width="88" Height="29" Rotation="0" FieldName="eng=NET/COUNT,chi=净重/数量">
+					<Text>$D(TransactionNetWeight)</Text>
+					<Font>Arial</Font>
+					<FontSize>9</FontSize>
+					<Alignment>left</Alignment>
+				</TextField>
+				<TextField Enable="Yes" Left="106" Top="206" Width="91" Height="27" Rotation="0" FieldName="eng=NET/COUNT,chi=包装日期">
+					<Text>包装日期</Text>
+					<Font>Arial</Font>
+					<FontSize>9</FontSize>
+					<Alignment>left</Alignment>
+				</TextField>
+				<TextField Enable="Yes" Left="195" Top="205" Width="88" Height="23" Rotation="0" FieldName="eng=CURRENT DATE,chi=当前日期">
+					<Text>$D(TransactionDate -f YY/MM/DD)</Text>
+					<Font>Arial</Font>
+					<FontSize>9</FontSize>
+					<Alignment>left</Alignment>
+				</TextField>
+				<TextField Enable="Yes" Left="178" Top="232" Width="96" Height="40" Rotation="0" FieldName="eng=TOTAL PRICE,chi=总价">
+					<Text>$D(TransactionTotalPrice)</Text>
+					<Font>STSong</Font>
+					<FontSize>12</FontSize>
+					<Alignment>left</Alignment>
+				</TextField>
+				<TextField Enable="Yes" Left="8" Top="277" Width="277" Height="27" Rotation="0" FieldName="eng=STATIC TEXT,chi=花果鲜带你去吃好水果">
+					<Text>花果鲜带你去吃好水果</Text>
+					<Font>Arial</Font>
+					<FontSize>9</FontSize>
+					<Alignment>center</Alignment>
+				</TextField>
+			</Frame>
+		</Label>
+	</LabelFormatTransaction>
+</Message>
